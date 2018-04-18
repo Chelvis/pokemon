@@ -1,6 +1,36 @@
 <div *ngIf="pokemon">
   <div class="row">
-    <div class="col">{{pokemon.name}}</div>
-    <div class="col"></div>
+    <div class="col-sm-3 text-center">
+      <img [src]="pokemon.sprites.front_default" [alt]="(pokemon.name | urlToName) + ' image'" class="img-fluid" />
+      <h1>{{pokemon.name | urlToName}}</h1>
+      <ul class="list-inline">
+        <li *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="list-inline-item">{{type.type.name | urlToName}}</li>
+      </ul>
+      <b>Weight: </b> {{pokemon.weight}}g <br/>
+      <b>Height: </b> {{pokemon.height}}cm
+    </div>
+    <div class="col-sm-9">
+        <h2>Moves</h2>
+        <ul class="list-inline">
+          <li *ngFor="let move of pokemon.moves | orderBy: 'move.name'" class="list-inline-item">{{move.move.name | urlToName}}</li>
+        </ul>
+
+        <h2>Abilities</h2>
+        <ul class="list-inline">
+          <li *ngFor="let ability of pokemon.abilities | orderBy: 'ability.name'" class="list-inline-item">{{ability.ability.name | urlToName}}
+            <span *ngIf="ability.is_hidden">(hidden ability)</span>
+          </li>
+        </ul>
+
+        <h2>Stats</h2>
+        <ul class="list-inline">
+          <li *ngFor="let stat of pokemon.stats" class="list-inline-item">{{stat.stat.name | urlToName}} | Necessary effort: {{stat.effort}} | Base stat: {{stat.base_stat}}</li>
+        </ul>
+
+        <h2>Held items</h2>
+        <ul class="list-inline">
+          <li *ngFor="let item of pokemon.held_items | orderBy: 'item.name'" class="list-inline-item">{{item.item.name | urlToName}}</li>
+        </ul>
+    </div>
   </div>
 </div>

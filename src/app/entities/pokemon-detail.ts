@@ -1,8 +1,4 @@
 export class Pokemon {
-  forms: Array<{
-    url: string,
-    name: string
-  }>;
   abilities: Array<{
     slot: number,
     is_hidden: boolean,
@@ -11,18 +7,35 @@ export class Pokemon {
       name: string
     };
   }>;
-  name: string;
-  weight: number;
+  forms: Array<{
+    url: string,
+    name: string
+  }>;
+  held_items: any;
+  height: number;
   moves: Array<{
     move: {
       name: string
     };
   }>;
+  name: string;
   sprites: {
     front_default: string
   };
-  held_items: any;
-  height: 7;
+  stats: Array<{
+    stat: {
+      name: string;
+    };
+    effort: number;
+    base_stat: number;
+  }>;
+  types: Array<{
+    type: {
+      name: string;
+    }
+  }>;
+  weight: number;
+
   constructor() {
   }
 

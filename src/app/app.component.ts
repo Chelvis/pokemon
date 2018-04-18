@@ -4,30 +4,17 @@ import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-  term = '';
-  menu: any;
-  menuFooter: any;
-  categories: any;
-  language = 'pt';
+  defaultPageTitle = 'Pokemon Database';
 
-  public constructor(private titleService: Title,  private metaService: Meta) { }
+  public constructor(private titleService: Title) { }
 
-  public menuRewrite(menu) {
-    this.menu = menu;
-  }
-  public menuFooterRewrite(menuFooter) {
-    this.menuFooter = menuFooter;
-  }
-  public setTitle( newTitle: string = 'Eucatex') {
-    this.titleService.setTitle(newTitle + (newTitle !== 'Eucatex' ? ' | Eucatex' : ''));
-  }
-  public setDescription(description: string) {
-    this.metaService.updateTag({name: 'description', content: description});
+
+  public setTitle(newTitle?) {
+    this.titleService.setTitle(newTitle ? (this.defaultPageTitle + ' | ' + newTitle) : this.defaultPageTitle);
   }
 
 }
