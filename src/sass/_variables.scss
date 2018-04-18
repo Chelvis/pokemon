@@ -1,34 +1,7 @@
 $urlImages: "/assets/imagens";
 
-//Cores
+$fontDefault: 'Source Sans Pro', sans-serif;
 
-$azul: #0574b0;
-
-//Cores produtos
-$pisos: #003c1f;
-$tintas: #00468e;
-$paineis: #42a0ab;
-$separador : #c9cd00;
-$portas: #175a95;
-$divisorias: #00b5b2;
-
-//cores capitulos
-
-$produtos: #11a7fc;
-$ambientes: #009688;
-$sustentabilidade: #96d127;
-$sobre-a-eucatex: darken(#f3e415,5%);
-$ri: #ff8538;
-$comunicacao: #ee3652;
-$blog: #0b0d0c;
-
-//nomes/cores do menu
-$itensMenu: (
-  (produtos, $produtos),
-  (ambientes ,$ambientes),
-  (sustentabilidade, $sustentabilidade),
-  (sobre-a-eucatex, $sobre-a-eucatex),
-  (ri, $ri),
-  (comunicacao, $comunicacao),
-  (blog, $blog)
-)
+$vermelho: #e83030;
+$verde: #80d880;
+$verdeClaro: #e8f8d0;
