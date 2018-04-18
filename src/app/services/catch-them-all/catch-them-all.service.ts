@@ -11,8 +11,9 @@ export class CatchThemAllService {
 
   constructor(private http: HttpClient) { }
 
-  catchList(limit?: number): Observable<PokemonList[]> {
-    return this.http.get<[PokemonList]>(environment.apiPokemons + (limit ? '?limit=' + limit : ''));
+  // Vamos listar logo todos os pokemons. Afinal a API é leve e paginações são chatas.
+  catchList(): Observable<PokemonList> {
+    return this.http.get<PokemonList>(environment.apiPokemons + '?limit=9999');
   }
 
   catch(id: number): Observable<Pokemon[]> {

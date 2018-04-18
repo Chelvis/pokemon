@@ -1,6 +1,7 @@
 import { PokemonList } from './../../entities/pokemon-list';
 import { CatchThemAllService } from './../../services/catch-them-all/catch-them-all.service';
 
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,20 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  pokemonList: PokemonList;
+  pokemonListResults: any;
+
   constructor(private catchThemAllService: CatchThemAllService) { }
 
-  pokemonLists: any;
-  pokemonList: any;
-
   ngOnInit() {
-    this.catchThemAllService.catchList().subscribe((data: PokemonList[]) => {
-      this.pokemonLists = data;
-      this.pokemonList = this.pokemonLists.results;
+    this.catchThemAllService.catchList().subscribe((data: PokemonList) => {
+      this.pokemonList = data;
+      console.log(this.pokemonList.results);
+      this.pokemonListResults = this.pokemonList.results;
     }, error => {
       console.log('Error when listing pokémons', error);
     });
   }
 
+  catchPokemon(id: number) {
 
+  }
 
 }
