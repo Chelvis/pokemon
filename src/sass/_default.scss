@@ -1,0 +1,8 @@
+@import 'variables';
+@import 'mixins';
+
+*:focus, *:hover { outline: none !important; }
+
+a { @include prefix(transition,.3s); }
+
+body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; }

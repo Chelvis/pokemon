@@ -1,0 +1,12 @@
+@import './variables';
+@import './mixins';
+
+$fa-font-path : '/assets/fonts';
+@import '~font-awesome/scss/font-awesome';
+
+@import './bootstrap';
+@import './default';
+
+@import "~animate.css/animate.min.css";
+
+@import './main';

@@ -1,0 +1,121 @@
+@import 'variables';
+@import 'vertical-timeline';
+
+h2 {font-size: 23px; font-weight: bold; font-family: 'Open Sans Condensed', sans-serif;}
+h3 {font-size: 20px; font-weight: bold; font-family: 'Open Sans Condensed', sans-serif;}
+h4 {font-size: 17px; font-weight: bold; font-family: 'Open Sans Condensed', sans-serif;}
+
+main {padding:20px;
+
+  @include breakpoint(sm) { padding: 60px 0 30px 0; }
+
+  .lista-arquivos, .lista-premios {  margin: 0; padding: 0; list-style: none;
+    li:nth-child(odd){
+      a { background-color: #f7f5f8;}
+    }
+    li { margin: 10px 0;
+      a { display: block; border: 1px solid #efefef; padding: 10px; background-color: #eeecef; color: #333 !important; text-decoration: none;
+
+        &::before { content: '\f1c1'; font-family: FontAwesome; font-size: 22px; float: left; margin-top: 7px; margin-right: 10px; height: 100%; display: block; color: #666;  }
+
+        .titulo { font-size: 18px; color: #000; border-bottom: 1px solid #c6e2e9; padding: 5px 0; }
+        p { margin:5px 0; }
+
+        &:hover { text-decoration: none; background-color: #efefef; border: 1px solid #c6e2e9; }
+      }
+    }
+  }
+
+  .lista-premios {
+    li { a { &::before { content: '\f005'; } } }
+  }
+}
+
+#conteudo {overflow: hidden; color: #666; font-size: 13px; line-height: 1.6;
+
+  a { color: #0091b3;
+    &:hover { opacity: 0.8; }
+  }
+
+  .lista {list-style: none;
+     li {position: relative;
+      &:before {content: "\f0c8"; font-family: "FontAwesome"; font-size: .7em; position: absolute; left: -17px; line-height: 2.4; color: lightgray;}
+    }
+  }
+  ol.lista-numerada { list-style: decimal;
+    li {position: relative; margin: 5px 0; padding-left: 5px;}
+  }
+}
+
+// Desempenho Social
+.img-social { padding:0 20px;
+  img { margin-bottom: 25px; border:1px solid #efefef; padding: 10px; }
+}
+
+.lista-premiacoes { list-style: none; margin: 0; padding: 0;
+  li { margin:0; padding: 5px 0 5px 50px;
+    &:before { content: '\f005'; font-family: "FontAwesome"; font-size: 12px; color: #0091b3; margin-right: 10px; }
+  }
+
+  .ano { margin: 20px 0; padding: 5px 0; border-bottom: 1px solid #efefef; border-top: 1px solid #efefef;
+    &:before { content: '\f091'; font-family: "FontAwesome"; font-size: 32px; display: inline; padding-right: 10px; color: #0091b3; border-right: 1px solid #efefef; }
+    h3 { font-size: 32px; margin: 0; display: inline; padding-left: 10px; }
+  }
+
+}
+
+.accordion {
+  .card {border: none;
+    .card-header {background: none; border: none; padding: 0; margin-top: 20px;
+      h1,h2,h3,h4,h5,h6 {margin: 0; padding: 0;}
+      a {font-weight: bold; font-size: 18px; font-family: 'Open Sans Condensed', sans-serif; border: 1px solid lightgray; background: lightgray; display: block; padding: 5px 10px; color: #666 !important; text-decoration: none; position: relative; padding-right: 38px;
+        &:before {content: ''; display: block; width: 0; height: 0; border-style: solid; position: absolute; right: 11px; top: 50%; margin-top: -4.5px; border-width: 0 6.5px 9px 6.5px; border-color: transparent transparent #848484 transparent; transition: .3s;}
+        &:after {content: ''; display: block; position: absolute; right: 0; top: 5px; bottom: 5px; width: 35px; border-left: 1px solid #848484;}
+        &.collapsed {background: none;
+          &:before {border-width: 9px 6.5px 0 6.5px; border-color: #848484 transparent transparent transparent;}
+        }
+      }
+    }
+    .card-block {padding: 20px 0;}
+  }
+}
+
+// Cores de página padrão
+
+.content-color {
+  &#banner-interna {border-top:10px solid $azul;
+    .tarja-banner {background: $azul; background: rgba($azul,.9);}
+  }
+  &#conteudo {
+    h2,h3,h4,h5,.cor {color:$azul;}
+    .bg-cor {background: $azul;}
+
+    .lista li:before {color:lighten($azul,20%);}
+    .accordion .card .card-header a { background: rgba($azul,.4); border-color: $azul;
+      &.collapsed {background: none;
+        &:hover {background: rgba($azul,.1);}
+      }
+    }
+  }
+}
+
+// Cores pré definidas
+@each $item in $itensMenu {
+  $color: nth($item, 2);
+  .content-color-#{nth($item, 1)} {
+    &#banner-interna {border-top:10px solid $color;
+      .tarja-banner {background: $color; background: rgba($color,.9);}
+    }
+    &#conteudo {
+      h2,h3,h4,h5,.cor {color:$color;}
+      .bg-cor {background: $color;}
+
+      .lista li:before {color:lighten($color,20%);}
+      .accordion .card .card-header a { background: rgba($color,.4); border-color: $color;
+        &.collapsed {background: none;
+          &:hover {background: rgba($color,.1);}
+        }
+      }
+    }
+  }
+}
