@@ -4,6 +4,8 @@ import { CatchThemAllService } from './../../services/catch-them-all/catch-them-
 
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,17 +19,23 @@ export class HomeComponent implements OnInit {
   constructor(private catchThemAllService: CatchThemAllService) { }
 
   ngOnInit() {
+    this.runServices();
+  }
+
+  catchPokemon(id: number) {
+
+  }
+
+  runServices() {
+
+    // Retorna a lista com todos os Pokemons
     this.catchThemAllService.catchList().subscribe((data: PokemonList) => {
       this.pokemonList = data;
       console.log(this.pokemonList.results);
       this.pokemonListResults = this.pokemonList.results;
     }, error => {
-      console.log('Error when listing pokémons', error);
+      console.log('Error when listing pokemons', error);
     });
-  }
-
-  catchPokemon(id: number) {
-
   }
 
 }

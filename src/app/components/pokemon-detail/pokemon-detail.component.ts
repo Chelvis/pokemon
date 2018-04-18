@@ -1,3 +1,5 @@
+import { GetIdFromPokeUrlPipe } from './../../pipes/get-id-from-poke-url.pipe';
+import { Pokemon } from './../../entities/pokemon-detail';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonDetailComponent implements OnInit {
 
-  constructor() { }
+  pokemon: Pokemon;
+
+  constructor(pokemon: Pokemon) { }
 
   ngOnInit() {
   }

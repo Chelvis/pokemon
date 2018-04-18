@@ -4,7 +4,7 @@
 
 <div *ngIf="pokemonList">
   <select (change)="catchPokemon($event.target.value)">
-    <option *ngFor="let pokemon of pokemonListResults | orderBy: 'name'" [value]="pokemon.url">{{pokemon.name}}</option>
+    <option *ngFor="let pokemon of pokemonListResults | orderBy: 'name'" [value]="pokemon.url | getIdFromPokeUrl">{{pokemon.name}}</option>
   </select>, I choose you!
 </div>
 

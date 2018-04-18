@@ -16,8 +16,8 @@ export class CatchThemAllService {
     return this.http.get<PokemonList>(environment.apiPokemons + '?limit=9999');
   }
 
-  catch(id: number): Observable<Pokemon[]> {
-    return this.http.get<[Pokemon]>(environment.apiPokemons + id);
+  catch(id: number): Observable<Pokemon> {
+    return this.http.get<Pokemon>(environment.apiPokemons + id);
   }
 
 }

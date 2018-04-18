@@ -15,12 +15,14 @@ import { NgxMaskModule } from 'ngx-mask';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { GetIdFromPokeUrlPipe } from './pipes/get-id-from-poke-url.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    GetIdFromPokeUrlPipe
   ],
   imports: [
     BrowserModule,
