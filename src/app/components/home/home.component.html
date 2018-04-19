@@ -7,10 +7,6 @@
           A good Pokémon Master knows everything about pokémons!<br />
           Select below a pokémon to learn more.
         </div>
-        <div *ngIf="pokemonList" class="choose">
-          <ng-select (change)="catchPokemon($event)" [items]="pokemonListResults" bindValue="id" bindLabel="name" data-placeholder="Select or type the pokémon's name"
-            class="pokemon-combo"></ng-select>
-        </div>
       </div>
       <div class="col-sm-4">
         <div class="ash h-100"></div>

@@ -1,3 +1,6 @@
-<p>
-  select-pokemon works!
-</p>
+<div *ngIf="pokemonList" class="select-pokemon">
+  <div class="container">
+    <ng-select (change)="catchPokemon($event)" [items]="pokemonListResults" bindValue="id" bindLabel="name" data-placeholder="Select or type the pokémon's name"
+      class="pokemon-combo"></ng-select>
+  </div>
+</div>

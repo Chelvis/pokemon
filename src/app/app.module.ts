@@ -7,7 +7,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgSelectModule } from '@ng-select/ng-select';
 
 import { ServicesModule } from './services/services.module';
 import { AgmCoreModule } from '@agm/core';
@@ -37,7 +36,6 @@ import { SharedModule } from './components/shared/shared.module';
     NgbModule,
     PipesModule,
     SharedModule,
-    NgSelectModule,
     NgxMaskModule.forRoot()
   ],
   providers: [AppComponent],

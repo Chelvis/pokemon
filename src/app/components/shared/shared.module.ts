@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+
 import { HeaderComponent } from './header/header.component';
 import { SelectPokemonComponent } from './select-pokemon/select-pokemon.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,10 +14,13 @@ import { SelectPokemonComponent } from './select-pokemon/select-pokemon.componen
   ],
   exports: [
     HeaderComponent,
-    SelectPokemonComponent
+    SelectPokemonComponent,
+    RouterModule
   ],
   imports: [
-    CommonModule
+    RouterModule,
+    CommonModule,
+    NgSelectModule
   ]
 })
 export class SharedModule { }
