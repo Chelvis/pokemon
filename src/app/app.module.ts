@@ -18,6 +18,7 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
 
 import { PipesModule } from './pipes/pipes.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

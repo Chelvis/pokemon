@@ -16,6 +16,7 @@ import { Pokemon } from './../../entities/pokemon-detail';
 export class PokemonDetailComponent implements OnInit {
 
   url: any;
+  showPageNotFound = false;
 
   pokemon: Pokemon;
   pokeId: number;
@@ -64,7 +65,11 @@ export class PokemonDetailComponent implements OnInit {
       this.appComponent.setTitle(this.urlToNamePipe.transform(this.pokemon.name)); // Reescreve o page title com o nome do Pokemon
       this.appComponent.loadingPage = false; // Apaga a camada de carregamento
     }, error => {
+      if (error.status === 404) {
+        this.showPageNotFound = true;
+      }
       console.log('Error when listing pokemon\'s data, error');
+      this.appComponent.loadingPage = false; // Apaga a camada de carregamento
     });
 
   }

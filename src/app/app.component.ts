@@ -8,7 +8,7 @@ import { Title, Meta } from '@angular/platform-browser';
 })
 
 export class AppComponent {
-  defaultPageTitle = 'Pokemon Database';
+  defaultPageTitle = 'Pokémon Database';
   loadingPage = true;
 
   public constructor(private titleService: Title) { }

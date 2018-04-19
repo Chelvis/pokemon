@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'mixins';
+
+.pg-404 {
+    .pg-404__dialog {background: white; padding: 30px; position: relative; margin-top: 15%;
+        &:before {content:''; width: 0; position: absolute; left: 100%; top: 0; height: 0; border-style: solid; border-width: 30px 30px 0 0; border-color: white transparent transparent transparent;}
+    }
+    .pg-404__buttom-ok {display: inline-block; padding: 5px;}
+    .pg-404__professor {@include bg("professor-404.png", no-repeat center top); background-size:cover;}
+}
