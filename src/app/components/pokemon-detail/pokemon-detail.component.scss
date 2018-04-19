@@ -24,6 +24,12 @@ h2 {font-size: 35px;
     .type-list__item {display: block; line-height: 1.3; margin: 3px 0;}
 }
 
-.list-inline .list-inline-item {border-radius: 10px; padding: 3px 10px; margin: 5px 5px 5px 0; line-height: 1.2; font-size: .9em; background: $azul2; color: white; border: 1px solid white;
+.list-inline .list-inline-item {border-radius: 10px; padding: 3px 10px; margin: 5px 5px 5px 0; line-height: 1.2; font-size: .9em; background: linear-gradient(to bottom, mix(white, $azul2, 30%) 0%, $azul2 100%); color: white; border: 1px solid white;
     span {font-size: .8em; display: inline-block;}
+}
+
+.btn { display: inline-block; padding: 5px 15px; border-radius: 50px; text-decoration: none !important; transition: .3s;
+    &.btn-azul {background: linear-gradient(to bottom, mix(white, $azul2, 20%) 0%, $azul2 100%); border: 2px solid $azul; color: white;}
+    &.btn-amarelo {background: linear-gradient(to bottom, mix(white, $amarelo, 20%) 0%, $amarelo 100%); border: 2px solid $azul2; color: black;}
+    &:hover {transform: scale(1.1);}
 }

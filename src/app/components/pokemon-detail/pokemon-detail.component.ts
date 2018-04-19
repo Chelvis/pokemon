@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppRoutingModule } from './../../app-routing.module';
 import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
 
 import { CatchThemAllService } from '../../services/catch-them-all/catch-them-all.service';
