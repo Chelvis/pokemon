@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { GetIdFromPokeUrlPipe } from './get-id-from-poke-url/get-id-from-poke-url.pipe';
 import { UrlToNamePipe } from './url-to-name/url-to-name.pipe';
+import { ArrayToStringPipe } from './array-to-string/array-to-string.pipe';
 
 @NgModule({
   imports: [
@@ -10,12 +11,18 @@ import { UrlToNamePipe } from './url-to-name/url-to-name.pipe';
   ],
   declarations: [
     GetIdFromPokeUrlPipe,
-    UrlToNamePipe
+    UrlToNamePipe,
+    ArrayToStringPipe
   ],
   exports: [
     GetIdFromPokeUrlPipe,
-    UrlToNamePipe
+    UrlToNamePipe,
+    ArrayToStringPipe
   ],
-  providers: [UrlToNamePipe]
+  providers: [
+    GetIdFromPokeUrlPipe,
+    UrlToNamePipe,
+    ArrayToStringPipe
+  ]
 })
 export class PipesModule { }
