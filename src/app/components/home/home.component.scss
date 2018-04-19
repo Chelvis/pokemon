@@ -1,4 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
+section {margin-top: 100px;}
+
+.slim-container {position: relative; padding: 0 15px; max-width: 400px; margin: 0 auto;}
+
 .pokemon-combo { border-radius: 50px; border:0; height: 30px; padding: 0 10px;}

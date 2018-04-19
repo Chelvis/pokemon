@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
 
 import { CatchThemAllService } from '../../services/catch-them-all/catch-them-all.service';
 
@@ -33,11 +33,13 @@ export class PokemonDetailComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.loadPage();
       }
+      if (event instanceof NavigationStart) {
+        this.appComponent.loadingPage = true;
+      }
     });
   }
 
   ngOnInit() {
-    this.appComponent.loadingPage = true;
     this.loadPage();
   }
 

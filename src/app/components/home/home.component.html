@@ -1,9 +1,8 @@
-<div class="container">
-  <div *ngIf="pokemonList" class="choose">
-    <ng-select (change)="catchPokemon($event)" [items]="pokemonListResults" bindValue="id" bindLabel="name" data-placeholder="Select or type the pokémon's name" class="pokemon-combo"></ng-select>, I choose you!
+<section>
+  <div class="slim-container">
+    <div *ngIf="pokemonList" class="choose">
+      <ng-select (change)="catchPokemon($event)" [items]="pokemonListResults" bindValue="id" bindLabel="name" data-placeholder="Select or type the pokémon's name"
+        class="pokemon-combo"></ng-select>, I choose you!
+    </div>
   </div>
-</div>
-
-<!--
-<option *ngFor="let pokemon of pokemonListResults | orderBy: 'name'" [value]="pokemon.url | getIdFromPokeUrl">{{pokemon.name | urlToName}}</option>
--->
+</section>

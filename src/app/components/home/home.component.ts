@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
 
 import { AppComponent } from '../../app.component';
 
@@ -36,11 +36,13 @@ export class HomeComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.loadPage();
       }
+      if (event instanceof NavigationStart) {
+        this.appComponent.loadingPage = true;
+      }
     });
   }
 
   ngOnInit() {
-    this.appComponent.loadingPage = true; // Ascende a camada de carregamento
     this.loadPage();
   }
 
