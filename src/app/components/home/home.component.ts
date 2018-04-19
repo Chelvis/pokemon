@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
+import { AppComponent } from '../../app.component';
+
 import { PokemonList } from './../../entities/pokemon-list';
 import { CatchThemAllService } from './../../services/catch-them-all/catch-them-all.service';
 
@@ -16,6 +18,7 @@ export class HomeComponent implements OnInit {
   pokemonListResults: any;
 
   constructor(
+    private appComponent: AppComponent,
     private catchThemAllService: CatchThemAllService,
     private activatedRoute: ActivatedRoute,
     private router: Router
@@ -29,6 +32,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appComponent.loadingPage = true; // Ascende a camada de carregamento
     this.loadPage();
   }
 
@@ -53,7 +57,8 @@ export class HomeComponent implements OnInit {
     // Retorna a lista com todos os Pokemons
     this.catchThemAllService.catchList().subscribe((data: PokemonList) => {
       this.pokemonList = data;
-      this.pokemonListResults = this.pokemonList.results;
+      this.pokemonListResults = this.pokemonList.results; // Grava apenas a propriedade results da API
+      this.appComponent.loadingPage = false; // Apaga a camada de carregamento
     }, error => {
       console.log('Error when listing pokemons', error);
     });

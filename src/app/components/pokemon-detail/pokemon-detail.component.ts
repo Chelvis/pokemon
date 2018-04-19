@@ -36,6 +36,7 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appComponent.loadingPage = true;
     this.loadPage();
   }
 
@@ -47,17 +48,21 @@ export class PokemonDetailComponent implements OnInit {
     if (this.url === newUrl) { return; }
     this.url = newUrl;
 
+    // Captura o parâmetro id da url e executa os serviços de API
     this.activatedRoute.params.subscribe(params => {
       this.pokeId = params['id'] || null;
       this.runServices();
     });
   }
 
+  // Retorna dados dos serviços de API
   runServices() {
 
+    // Retorna os detalhes do Pokemon
     this.catchThemAllService.catchPokemon(this.pokeId).subscribe((data: Pokemon) => {
       this.pokemon = data;
-      this.appComponent.setTitle(this.urlToNamePipe.transform(this.pokemon.name));
+      this.appComponent.setTitle(this.urlToNamePipe.transform(this.pokemon.name)); // Reescreve o page title com o nome do Pokemon
+      this.appComponent.loadingPage = false; // Apaga a camada de carregamento
     }, error => {
       console.log('Error when listing pokemon\'s data, error');
     });

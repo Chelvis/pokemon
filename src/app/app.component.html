@@ -1,5 +1,5 @@
 <!--<app-header (menuIsReady)="menuRewrite($event)"></app-header>-->
-<!--<app-footer [menu]="menu" (menuIsFooterReady)="menuFooterRewrite($event)"></app-footer>-->
+<div class="loading" *ngIf="loadingPage"></div>
 <div class="container">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
