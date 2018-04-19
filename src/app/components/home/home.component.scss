@@ -1,8 +1,12 @@
 @import 'variables';
 @import 'mixins';
 
-section {margin-top: 100px;}
-
-.slim-container {position: relative; padding: 0 15px; max-width: 400px; margin: 0 auto;}
+section {position: absolute; top: 30%; height: 70%; left: 0; width: 100%; }
 
 .pokemon-combo { border-radius: 50px; border:0; height: 30px; padding: 0 10px;}
+
+.dialog {background: white; padding: 30px; position: relative; margin-top: 10%; margin-bottom: 50px;
+    &:before {content:''; width: 0; position: absolute; left: 100%; top: 0; height: 0; border-style: solid; border-width: 30px 30px 0 0; border-color: white transparent transparent transparent;}
+}
+
+.ash {@include bg("ash.png", no-repeat center top); background-size: cover;}

@@ -21,18 +21,18 @@
 
         <div class="row">
           <div class="col">
+            <b>Weight</b>
+            <br> {{pokemon.weight}}g</div>
+          <div class="col">
+            <b>Height</b>
+            <br> {{pokemon.height}}cm</div>
+          <div class="col">
             <b>Type</b>
             <br>
             <ul class="type-list">
               <span *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="type-list__item">{{type.type.name | urlToName}}</span>
             </ul>
           </div>
-          <div class="col">
-            <b>Weight</b>
-            <br> {{pokemon.weight}}g</div>
-          <div class="col">
-            <b>Height</b>
-            <br> {{pokemon.height}}cm</div>
         </div>
         <br>
       </div>

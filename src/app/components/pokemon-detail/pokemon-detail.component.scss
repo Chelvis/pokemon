@@ -21,9 +21,7 @@ h2 {font-size: 35px;
 .information-box {margin-bottom: 40px;}
 
 .type-list {list-style: none; padding: 0; margin: 0;
-    .type-list__item {display: inline-block; padding: 0 5px; line-height: 1.3; margin: 3px 0; border-left: 1px solid #666;
-        &:first-child {border: none;}
-    }
+    .type-list__item {display: block; line-height: 1.3; margin: 3px 0;}
 }
 
 .list-inline .list-inline-item {border-radius: 10px; padding: 3px 10px; margin: 5px 5px 5px 0; line-height: 1.2; font-size: .9em; background: $azul2; color: white; border: 1px solid white;
