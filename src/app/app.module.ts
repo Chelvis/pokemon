@@ -17,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 import { PipesModule } from './pipes/pipes.module';
+import { SharedModule } from './components/shared/shared.module';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { PipesModule } from './pipes/pipes.module';
     ServicesModule,
     NgbModule,
     PipesModule,
+    SharedModule,
     NgxMaskModule.forRoot()
   ],
   providers: [AppComponent],

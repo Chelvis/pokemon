@@ -1,7 +1,8 @@
-<div *ngIf="pokemonList">
-  <select (change)="catchPokemon($event.target.value)" (change)="catchPokemon($event.target.value)">
-    <option *ngFor="let pokemon of pokemonListResults | orderBy: 'name'" [value]="pokemon.url | getIdFromPokeUrl">{{pokemon.name | urlToName}}</option>
-  </select>, I choose you!
+<div class="container">
+  <div *ngIf="pokemonList">
+    <select (change)="catchPokemon($event.target.value)" class="pokemon-combo">
+      <option value="">Select the Pokémon</option>
+      <option *ngFor="let pokemon of pokemonListResults | orderBy: 'name'" [value]="pokemon.url | getIdFromPokeUrl">{{pokemon.name | urlToName}}</option>
+    </select>, I choose you!
+  </div>
 </div>
-
-

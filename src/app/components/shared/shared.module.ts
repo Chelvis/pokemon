@@ -9,6 +9,9 @@ import { HeaderComponent } from './header/header.component';
   ],
   declarations: [
     HeaderComponent
+  ],
+  exports: [
+    HeaderComponent
   ]
 })
 export class SharedModule { }
