@@ -2,5 +2,7 @@
 @import 'mixins';
 
 header {padding: 30px 0;
-    .database-title {font-size: 30px; font-weight: bold;}
+    .database-title {font-size: 40px; font-weight: bold; text-align: right; color: black;
+        i.fa {margin-right: 5px; color: #666;}
+    }
 }

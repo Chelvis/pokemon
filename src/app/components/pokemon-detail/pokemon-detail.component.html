@@ -18,13 +18,15 @@
         <img [src]="pokemon.sprites.front_default" [alt]="(pokemon.name | urlToName) + ' image'" class="img-fluid" />
         <h1 class="pokemon-name">{{pokemon.name | urlToName}}</h1>
         <br>
-        <b>Type</b>
-        <br>
-        <ul class="type-list">
-          <span *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="type-list__item">{{type.type.name | urlToName}}</span>
-        </ul>
-        <br>
+
         <div class="row">
+          <div class="col">
+            <b>Type</b>
+            <br>
+            <ul class="type-list">
+              <span *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="type-list__item">{{type.type.name | urlToName}}</span>
+            </ul>
+          </div>
           <div class="col">
             <b>Weight</b>
             <br> {{pokemon.weight}}g</div>
@@ -57,7 +59,11 @@
           <h2>
             <i class="fa fa-bolt"></i> Stats</h2>
           <ul class="list-inline">
-            <li *ngFor="let stat of pokemon.stats" class="list-inline-item">{{stat.stat.name | urlToName}}<br> <span>Necessary effort: {{stat.effort}}<br> Base stat: {{stat.base_stat}}</span></li>
+            <li *ngFor="let stat of pokemon.stats" class="list-inline-item">{{stat.stat.name | urlToName}}
+              <br>
+              <span>Necessary effort: {{stat.effort}}
+                <br> Base stat: {{stat.base_stat}}</span>
+            </li>
           </ul>
         </div>
 
