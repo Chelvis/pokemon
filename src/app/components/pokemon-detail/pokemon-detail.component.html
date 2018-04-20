@@ -26,10 +26,10 @@
           <div class="row">
             <div class="col">
               <b>Weight</b>
-              <br> {{pokemon.weight}}g</div>
+              <br> {{pokemon.weight | numberToDecimal: 10}}kg</div>
             <div class="col">
               <b>Height</b>
-              <br> {{pokemon.height}}cm</div>
+              <br> {{pokemon.height | numberToDecimal: 10}}m</div>
             <div class="col">
               <b>Type</b>
               <br>
