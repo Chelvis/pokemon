@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ServicesModule } from './services/services.module';
 import { AgmCoreModule } from '@agm/core';
-import { NgxMaskModule } from 'ngx-mask';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -35,8 +34,7 @@ import { SharedModule } from './components/shared/shared.module';
     ServicesModule,
     NgbModule,
     PipesModule,
-    SharedModule,
-    NgxMaskModule.forRoot()
+    SharedModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent],
