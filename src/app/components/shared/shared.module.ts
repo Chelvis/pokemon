@@ -6,6 +6,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { HeaderComponent } from './header/header.component';
 import { SelectPokemonComponent } from './select-pokemon/select-pokemon.component';
 import { RouterModule } from '@angular/router';
+import { AppComponent } from '../../app.component';
 
 @NgModule({
   declarations: [
