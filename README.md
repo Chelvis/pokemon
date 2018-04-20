@@ -49,7 +49,7 @@ Pesquisei por alguns materiais online e impresso sobre Pokémon e percebi que qu
 
 [Production](http://kelvinmarques.com.br/pokemon/)
 
-[404](http://kelvinmarques.com.br/pokemon/8324832094823)
+[404](http://kelvinmarques.com.br/pokemon/#/543252532)
 
 .
 
