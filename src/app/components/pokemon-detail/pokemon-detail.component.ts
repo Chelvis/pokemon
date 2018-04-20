@@ -77,9 +77,10 @@ export class PokemonDetailComponent implements OnInit {
     }, error => {
       if (error.status === 404) {
         this.showPageNotFound = true;
+        this.appComponent.loadingPage = false; // Apaga a camada de carregamento
+        return;
       }
       console.log('Error when listing pokemon\'s data, error');
-      this.appComponent.loadingPage = false; // Apaga a camada de carregamento
     });
 
   }
