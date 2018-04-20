@@ -9,6 +9,8 @@ import { UrlToNamePipe } from './../../pipes/url-to-name/url-to-name.pipe';
 import { AppComponent } from '../../app.component';
 import { Pokemon } from './../../entities/pokemon-detail';
 
+import * as $ from 'jquery';
+
 @Component({
   selector: 'app-pokemon-detail',
   templateUrl: './pokemon-detail.component.html',
@@ -66,6 +68,7 @@ export class PokemonDetailComponent implements OnInit {
     this.catchThemAllService.catchPokemon(this.pokeId).subscribe((data: Pokemon) => {
       this.pokemon = data;
       this.appComponent.setTitle(this.urlToNamePipe.transform(this.pokemon.name)); // Reescreve o page title com o nome do Pokemon
+      this.jQueryAcordeonInit(); // Constrói os acordeons
       this.appComponent.loadingPage = false; // Apaga a camada de carregamento
     }, error => {
       if (error.status === 404) {
@@ -75,6 +78,19 @@ export class PokemonDetailComponent implements OnInit {
       this.appComponent.loadingPage = false; // Apaga a camada de carregamento
     });
 
+  }
+
+  // Constrói os acordeons com jQuery
+  jQueryAcordeonInit() {
+    setTimeout(() => { // Garante que será executado após o consumo das APIs
+      $('.acTab').on('click', function(e) {
+        e.preventDefault();
+        const target = $(this).attr('href');
+        $('.acContent' + target).stop().slideToggle();
+        $(this).toggleClass('ac-content-expanded');
+      });
+      $('.acContent').hide();
+    }, 50);
   }
 
 }
