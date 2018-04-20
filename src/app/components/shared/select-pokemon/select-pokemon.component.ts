@@ -17,13 +17,10 @@ import { Router } from '@angular/router';
 })
 export class SelectPokemonComponent implements OnInit {
 
-  pokemonList: PokemonList;
-  pokemonListResults: any;
+  pokemonList: PokemonList; // Receberá a lista com todos os pokemons
+  pokemonListResults: any; // Será transformada em uma lista legível de pokemons para ser usada na combo
 
-  @Input() selectdPokemon;
-
-  prevPokemon: any;
-  nextPokemon: any;
+  @Input() selectdPokemon; // Recebe o id do Pokemon sendo exibido pela PokemonDetail
 
   constructor(
     private appComponent: AppComponent,
@@ -38,6 +35,7 @@ export class SelectPokemonComponent implements OnInit {
     this.runServices();
   }
 
+  // Método que direciona para a página/rota do pokemon selecionado
   catchPokemon(e: any) {
     this.router.navigate([e.id]);
   }
@@ -49,9 +47,9 @@ export class SelectPokemonComponent implements OnInit {
       this.pokemonList = data;
       // this.pokemonListResults = this.pokemonList.results; // Grava apenas a propriedade results da API
 
-      // Transforma o resultado dos pokemons {url,name} em uma array de objetos
-      // para construir a combo {id,name}
+      // Transforma o resultado dos pokemons {url,name} em uma array de objetos para construir a combo {id,name}
       let counter = 0;
+
       const pokemonListResults = this.pokemonList.results.map(obj => {
         const pokemonId = this.getIdFromPokeUrl.transform(obj.url);
         const pokemonName = this.urlToName.transform(obj.name);
@@ -64,14 +62,6 @@ export class SelectPokemonComponent implements OnInit {
     }, error => {
       console.log('Error when listing pokemons', error);
     });
-  }
-
-  prevAndNextPoke(): any {
-    if (!this.selectdPokemon) {
-      return null;
-    }
-
-    return this.selectdPokemon;
   }
 
 }

@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// Este pipe converte textos em formato-de-url para Capitalize case
+
 @Pipe({
   name: 'urlToName'
 })

@@ -19,10 +19,10 @@ import * as $ from 'jquery';
 export class PokemonDetailComponent implements OnInit {
 
   url: any;
-  showPageNotFound = false;
+  showPageNotFound: boolean;
 
-  pokemon: Pokemon;
-  pokeId: number;
+  pokemon: Pokemon; // Receberá os detalhes do Pokemon
+  pokeId: number; // Receberá o id do Pokemon
 
   constructor(
     private appComponent: AppComponent,
@@ -36,6 +36,7 @@ export class PokemonDetailComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.loadPage();
       }
+      // Se o usuário iniciar uma troca de rota, exibe a camada de carregamento
       if (event instanceof NavigationStart) {
         this.appComponent.loadingPage = true;
       }
@@ -53,6 +54,9 @@ export class PokemonDetailComponent implements OnInit {
     const newUrl = this.activatedRoute.snapshot.url.join('/');
     if (this.url === newUrl) { return; }
     this.url = newUrl;
+
+    this.pokemon = null; // Reseta os detalhes de pokemon e os status do HTML
+    this.showPageNotFound = false; // Apaga camada de página não encontrada
 
     // Captura o parâmetro id da url e executa os serviços de API
     this.activatedRoute.params.subscribe(params => {
@@ -83,13 +87,18 @@ export class PokemonDetailComponent implements OnInit {
   // Constrói os acordeons com jQuery
   jQueryAcordeonInit() {
     setTimeout(() => { // Garante que será executado após o consumo das APIs
-      $('.acTab').on('click', function(e) {
+
+      $('body').off('click', '.acTab'); // Previne redundância na delegação do evento
+
+      $('body').on('click', '.acTab', function(e) {
         e.preventDefault();
         const target = $(this).attr('href');
         $('.acContent' + target).stop().slideToggle();
         $(this).toggleClass('ac-content-expanded');
+        console.log('click');
       });
-      $('.acContent').hide();
+
+      $('.acContent').hide(); // Esconde todos os dados retráteis
     }, 50);
   }
 

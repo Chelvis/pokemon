@@ -1,101 +1,106 @@
-<div *ngIf="showPageNotFound" class="container h-100 pg-404">
-  <div class="row h-100">
-    <div class="col">
-      <h1 class="pg-404__dialog">Sorry kid, but this... strange Pokémon you're looking for is not registred in our database.</h1>
+<section *ngIf="showPageNotFound" class="pg-404">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-md">
+        <h1 class="sr-only">404 - Page not found</h1>
+        <div class="pg-404__dialog">Sorry kid, but this... strange Pokémon you're looking for is not registred in our database.</div>
 
-      <a routerlink="/" class="pg-404__buttom-ok">Oh, got it...</a>
-    </div>
-    <div class="col">
-      <div class="h-100 pg-404__professor"></div>
-    </div>
-  </div>
-</div>
-
-<div *ngIf="pokemon" class="pokemonDetail container">
-  <div>
-    <div class="row">
-      <div class="col-sm-3 text-center">
-        <img [src]="pokemon.sprites.front_default" [alt]="(pokemon.name | urlToName) + ' image'" class="img-fluid" />
-        <h1 class="pokemon-name">{{pokemon.name | urlToName}}</h1>
-        <br>
-
-        <div class="row">
-          <div class="col">
-            <b>Weight</b>
-            <br> {{pokemon.weight}}g</div>
-          <div class="col">
-            <b>Height</b>
-            <br> {{pokemon.height}}cm</div>
-          <div class="col">
-            <b>Type</b>
-            <br>
-            <ul class="type-list">
-              <span *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="type-list__item">{{type.type.name | urlToName}}</span>
-            </ul>
-          </div>
-        </div>
-        <br>
+        <a routerlink="/" class="btn btn-azul">Oh, got it...</a>
       </div>
-      <div class="col-sm-9">
-        <div class="information-box">
-          <h2>
-            <a href="#moves" class="acTab" role="tab">
-              <i class="fa fa-hand-paper-o" aria-hidden="true"></i> Moves
-            </a>
-          </h2>
-          <div class="acContent" id="moves">
-            <ul class="list-inline">
-              <li *ngFor="let move of pokemon.moves | orderBy: 'move.name'" class="list-inline-item">{{move.move.name | urlToName}}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="information-box">
-          <h2>
-            <a href="#abilities" class="acTab" role="tab">
-              <i class="fa fa-star-o"></i> Abilities
-            </a>
-          </h2>
-          <div class="acContent" id="abilities">
-            <ul class="list-inline">
-              <li *ngFor="let ability of pokemon.abilities | orderBy: 'ability.name'" class="list-inline-item">{{ability.ability.name | urlToName}}
-                <span *ngIf="ability.is_hidden">(hidden ability)</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="information-box">
-          <h2>
-            <a href="#stats" class="acTab" role="tab">
-              <i class="fa fa-bolt"></i> Stats
-            </a>
-          </h2>
-          <div class="acContent" id="stats">
-            <ul class="list-inline">
-              <li *ngFor="let stat of pokemon.stats" class="list-inline-item">{{stat.stat.name | urlToName}}
-                <br>
-                <span>Necessary effort: {{stat.effort}}
-                  <br> Base stat: {{stat.base_stat}}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="information-box">
-          <h2>
-            <a href="#held_items" class="acTab" role="tab">
-              <i class="fa fa-shopping-bag"></i> Held items
-            </a>
-          </h2>
-          <div class="acContent" id="held_items">
-            <ul class="list-inline" *ngIf="pokemon.held_items?.length">
-              <li *ngFor="let item of pokemon.held_items | orderBy: 'item.name'" class="list-inline-item">{{item.item.name | urlToName}}</li>
-            </ul>
-            <p *ngIf="!pokemon.held_items?.length">{{pokemon.name | urlToName}} doesn't carry any items.</p>
-          </div>
-        </div>
+      <div class="col-md">
+        <div class="h-100 pg-404__professor"></div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<section *ngIf="pokemon">
+  <div class="pokemonDetail container">
+    <div>
+      <div class="row">
+        <div class="col-sm-3 text-center">
+          <img [src]="pokemon.sprites.front_default" [alt]="(pokemon.name | urlToName) + ' image'" class="img-fluid" />
+          <h1 class="pokemon-name">{{pokemon.name | urlToName}}</h1>
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <b>Weight</b>
+              <br> {{pokemon.weight}}g</div>
+            <div class="col">
+              <b>Height</b>
+              <br> {{pokemon.height}}cm</div>
+            <div class="col">
+              <b>Type</b>
+              <br>
+              <ul class="type-list">
+                <span *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="type-list__item">{{type.type.name | urlToName}}</span>
+              </ul>
+            </div>
+          </div>
+          <br>
+        </div>
+        <div class="col-sm-9">
+          <div class="information-box">
+            <h2>
+              <a href="#moves" class="acTab" role="tab">
+                <i class="fa fa-hand-paper-o" aria-hidden="true"></i> Moves
+              </a>
+            </h2>
+            <div class="acContent" id="moves">
+              <ul class="list-inline">
+                <li *ngFor="let move of pokemon.moves | orderBy: 'move.name'" class="list-inline-item">{{move.move.name | urlToName}}</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="information-box">
+            <h2>
+              <a href="#abilities" class="acTab" role="tab">
+                <i class="fa fa-star-o"></i> Abilities
+              </a>
+            </h2>
+            <div class="acContent" id="abilities">
+              <ul class="list-inline">
+                <li *ngFor="let ability of pokemon.abilities | orderBy: 'ability.name'" class="list-inline-item">{{ability.ability.name | urlToName}}
+                  <span *ngIf="ability.is_hidden">(hidden ability)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="information-box">
+            <h2>
+              <a href="#stats" class="acTab" role="tab">
+                <i class="fa fa-bolt"></i> Stats
+              </a>
+            </h2>
+            <div class="acContent" id="stats">
+              <ul class="list-inline">
+                <li *ngFor="let stat of pokemon.stats" class="list-inline-item">{{stat.stat.name | urlToName}}
+                  <br>
+                  <span>Necessary effort: {{stat.effort}}
+                    <br> Base stat: {{stat.base_stat}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="information-box">
+            <h2>
+              <a href="#held_items" class="acTab" role="tab">
+                <i class="fa fa-shopping-bag"></i> Held items
+              </a>
+            </h2>
+            <div class="acContent" id="held_items">
+              <ul class="list-inline" *ngIf="pokemon.held_items?.length">
+                <li *ngFor="let item of pokemon.held_items | orderBy: 'item.name'" class="list-inline-item">{{item.item.name | urlToName}}</li>
+              </ul>
+              <p *ngIf="!pokemon.held_items?.length">{{pokemon.name | urlToName}} doesn't carry any items.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

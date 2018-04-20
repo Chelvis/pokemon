@@ -10,12 +10,15 @@ h2 {font-size: 25px; margin: 0;
     > div {padding: 50px 0; }
 }
 
-.pg-404 {
-    .pg-404__dialog {background: white; padding: 30px; position: relative; margin-top: 15%;
-        &:before {content:''; width: 0; position: absolute; left: 100%; top: 0; height: 0; border-style: solid; border-width: 30px 30px 0 0; border-color: white transparent transparent transparent;}
+.pg-404 { position: absolute; left: 0; top: 20%; bottom:0; width: 100%;
+    .pg-404__dialog {padding: 30px; position: relative; font-size: 20px; color: black; background: linear-gradient(to bottom, $amarelo 0%, $amarelo 50%, mix(black, $amarelo, 10%) 100%); margin-top: 10%; margin-bottom: 50px; box-shadow: 0 0 10px rgba(black,.3); border-radius: 20px;}
+    .pg-404__professor {@include bg("professor-404.png", no-repeat center top); display: none; background-size:100% auto;}
+    @include breakpoint(sm) {
+        .pg-404__dialog  {border-radius: 20px 0 20px 20px;
+            &:before {content:''; width: 0; position: absolute; left: 100%; top: 0; height: 0; border-style: solid; border-width: 30px 30px 0 0; border-color: $amarelo transparent transparent transparent;}
+        }
+        .pg-404__professor {display: block;}
     }
-    .pg-404__buttom-ok {display: inline-block; padding: 5px;}
-    .pg-404__professor {@include bg("professor-404.png", no-repeat center top); background-size:cover;}
 }
 
 //.information-box {margin-bottom: 40px;}

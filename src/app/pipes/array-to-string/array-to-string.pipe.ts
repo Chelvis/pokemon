@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// Este pipe une uma array separando pela string do primeiro parâmetro e retorna em string
+
 @Pipe({
   name: 'arrayToString'
 })

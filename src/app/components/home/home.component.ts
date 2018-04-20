@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.loadPage();
       }
+      // Se o usuário iniciar uma troca de rota, exibe a camada de carregamento
       if (event instanceof NavigationStart) {
         this.appComponent.loadingPage = true;
       }
@@ -41,7 +42,8 @@ export class HomeComponent implements OnInit {
     const newUrl = this.activatedRoute.snapshot.url.join('/');
     if (this.url === newUrl) { return; }
     this.url = newUrl;
-    this.appComponent.loadingPage = false;
+
+    this.appComponent.loadingPage = false; // Apaga a camada de carregamento
 
   }
 

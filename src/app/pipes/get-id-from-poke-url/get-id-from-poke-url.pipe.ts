@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// Este pipe é usado para extrair somente o id da url da API dos detalhes de um pokemon
+
 @Pipe({
   name: 'getIdFromPokeUrl'
 })
