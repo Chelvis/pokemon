@@ -6,6 +6,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ServicesModule } from './services/services.module';
@@ -18,6 +19,7 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
 import { PipesModule } from './pipes/pipes.module';
 import { SharedModule } from './components/shared/shared.module';
 
+const routes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { SharedModule } from './components/shared/shared.module';
     ServicesModule,
     NgbModule,
     PipesModule,
-    SharedModule
+    SharedModule,
+    RouterModule.forRoot(routes, { useHash: true })  // .../#/crisis-center/
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent],
