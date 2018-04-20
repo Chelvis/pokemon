@@ -37,13 +37,22 @@ Reaproveitamento de código, conhecimento da linguagem ECMASCRIPT mínimo 2015.
 - **Testing**
 Utilizei um pouco do mais padrão oferecido pelo Karma/Jasmine quando executado no node. O mais básico o node fez por mim, mas não tenho muita experiência/aptidão com testing em aplicações Angular ainda.
 
+## Design
+
+Design não é meu forte, mas a cara desse sisteminha me agradou porque ficou simples e leve.
+
+Pesquisei por alguns materiais online e impresso sobre Pokémon e percebi que quase todos usam tons de azul, então não vou ser eu quem vai contrariar. Imagens dos personagens e alguns recursos do CSS3 possibilitaram deixar a interface bem descontraída.
 
 ## Links
 
-[Production](http://kelvinmarques.com.br/pokemon/)
-
 [Github](https://github.com/Chelvis/pokemon)
 
+[Production](http://kelvinmarques.com.br/pokemon/)
+
+[404](http://kelvinmarques.com.br/pokemon/8324832094823)
+
 .
+
 .
+
 Obrigado!
