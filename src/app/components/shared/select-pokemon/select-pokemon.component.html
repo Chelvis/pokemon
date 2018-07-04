@@ -1,6 +1,13 @@
-<div *ngIf="pokemonList" class="select-pokemon">
+<div *ngIf="pokemonList" class="selectPokemon">
   <div class="container">
-    <ng-select (change)="catchPokemon($event)" [items]="pokemonListResults" bindValue="id" bindLabel="name" data-placeholder="Select or type the pokémon's name"
-      class="pokemon-combo"></ng-select>
+    <div class="d-flex flex-sm-row justify-content-center">
+      <div class="text-nowrap selectPokemon--text">
+          Select a Pokémon: &nbsp;
+      </div>
+      <ng-select (change)="catchPokemon($event)" [items]="pokemonListResults" bindValue="id" bindLabel="name" data-placeholder="Select or type the pokémon's name"
+      class="pokemon-combo w-100"></ng-select>
+    </div>
+    
+    
   </div>
 </div>

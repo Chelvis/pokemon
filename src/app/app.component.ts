@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterEvent } from '@angular/router';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,6 @@ export class AppComponent {
   loadingPage = true;
 
   public constructor(private titleService: Title) { }
-
 
   public setTitle(newTitle?) {
     this.titleService.setTitle(newTitle ? (this.defaultPageTitle + ' | ' + newTitle) : this.defaultPageTitle);

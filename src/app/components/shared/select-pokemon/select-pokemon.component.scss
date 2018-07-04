@@ -1,6 +1,6 @@
 @import 'variables';
 @import 'mixins';
 
-.select-pokemon { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba($azul2,.8); padding: 10px 0;
-    .select-pokemon__btn {display: inline-block; width: 35px; height: 35px; font-size: 20px; text-align: center; line-height: 35px; margin: 0 5px; background: $amarelo; border-radius: 50%; color: white;}
+.selectPokemon { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba($azul2,.8); padding: 10px 0;
+    &--text {color: white; font-size: 18px;}
 }

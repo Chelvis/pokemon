@@ -37,7 +37,7 @@ const routes: Routes = [];
     NgbModule,
     PipesModule,
     SharedModule,
-    RouterModule.forRoot(routes, { useHash: true })  // .../#/crisis-center/
+    RouterModule.forRoot(routes)  // .../#/crisis-center/
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent],

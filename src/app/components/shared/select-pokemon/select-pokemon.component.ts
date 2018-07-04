@@ -42,6 +42,7 @@ export class SelectPokemonComponent implements OnInit {
 
   // Retorna dados dos serviços de API
   runServices() {
+    this.appComponent.loadingPage = true;
     // Retorna a lista com todos os Pokemons
     this.catchThemAllService.catchList().subscribe((data: PokemonList) => {
       this.pokemonList = data;
