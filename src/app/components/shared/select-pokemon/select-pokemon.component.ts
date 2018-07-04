@@ -42,11 +42,10 @@ export class SelectPokemonComponent implements OnInit {
 
   // Retorna dados dos serviços de API
   runServices() {
-    this.appComponent.loadingPage = true;
+    this.appComponent.comboReady = false;
     // Retorna a lista com todos os Pokemons
     this.catchThemAllService.catchList().subscribe((data: PokemonList) => {
       this.pokemonList = data;
-      // this.pokemonListResults = this.pokemonList.results; // Grava apenas a propriedade results da API
 
       // Transforma o resultado dos pokemons {url,name} em uma array de objetos para construir a combo {id,name}
       let counter = 0;
@@ -59,7 +58,7 @@ export class SelectPokemonComponent implements OnInit {
 
       this.pokemonListResults = this.orderPipe.transform(pokemonListResults, 'name');
 
-      this.appComponent.loadingPage = false; // Apaga a camada de carregamento
+      this.appComponent.comboReady = true; // Apaga a camada de carregamento
     }, error => {
       console.log('Error when listing pokemons', error);
     });

@@ -1,3 +1,4 @@
+import { JqueryFunctionsService } from './jquery-functions.service';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,8 @@ import { CatchThemAllService } from './catch-them-all/catch-them-all.service';
     CommonModule
   ],
   providers: [
-    CatchThemAllService
+    CatchThemAllService,
+    JqueryFunctionsService
   ],
   declarations: []
 })
