@@ -1,14 +1,14 @@
-<section *ngIf="showPageNotFound" class="pg-404">
+<section *ngIf="showPageNotFound" class="pg404">
   <div class="container h-100">
     <div class="row h-100">
       <div class="col-md">
         <h1 class="sr-only">404 - Page not found</h1>
-        <div class="pg-404__dialog">Sorry kid, but this... strange Pokémon you're looking for is not registred in our database.</div>
+        <div class="pg404--dialog">Sorry kid, but this... strange Pokémon you're looking for is not registred in our database.</div>
 
         <a routerLink="/" class="btn btn-azul">Oh, got it...</a>
       </div>
       <div class="col-md">
-        <div class="h-100 pg-404__professor"></div>
+        <div class="h-100 pg404--professor"></div>
       </div>
     </div>
   </div>
@@ -33,8 +33,8 @@
             <div class="col">
               <b>Type</b>
               <br>
-              <ul class="type-list">
-                <span *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="type-list__item">{{type.type.name | urlToName}}</span>
+              <ul class="typeList">
+                <span *ngFor="let type of pokemon.types | orderBy: 'type.name'" class="typeList--item">{{type.type.name | urlToName}}</span>
               </ul>
             </div>
           </div>

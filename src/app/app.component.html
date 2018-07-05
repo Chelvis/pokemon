@@ -1,4 +1,4 @@
-<div class="loading" *ngIf="comboReady && pokemonReady"></div>
+<div class="loading" *ngIf="!comboReady || !pokemonReady"></div>
 <app-header></app-header>
 <router-outlet></router-outlet>
 <app-select-pokemon></app-select-pokemon>

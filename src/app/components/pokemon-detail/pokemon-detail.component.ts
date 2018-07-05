@@ -43,14 +43,18 @@ export class PokemonDetailComponent implements OnInit {
 
     this.pokemon = null; // Reseta os detalhes de pokemon e os status do HTML
     this.showPageNotFound = false; // Apaga camada de página não encontrada
-    this.appComponent.pokemonReady = false; // Apaga a camada de carregamento
+    this.appComponent.pokemonReady = false; // Ascende a camada de carregamento
 
     // Retorna os detalhes do Pokemon
     this.catchThemAllService.catchPokemon(this.pokeId).subscribe((data: Pokemon) => {
       this.pokemon = data;
       this.appComponent.setTitle(this.urlToNamePipe.transform(this.pokemon.name)); // Reescreve o page title com o nome do Pokemon
-      this.jqueryFunctionsService.setInfoAccordion(); // Invoca o método que constrói e configura o acordeon nas informações do Pokémon
-      this.appComponent.pokemonReady = true; // Apaga a camada de carregamento
+      // Invoca o método que constrói e configura o acordeon nas informações do Pokémon
+      this.jqueryFunctionsService.setInfoAccordion({
+        callback: () => {
+          this.appComponent.pokemonReady = true; // Apaga a camada de carregamento
+        }
+      });
     }, error => {
       if (error.status === 404) {
         this.showPageNotFound = true;

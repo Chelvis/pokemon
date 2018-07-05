@@ -10,21 +10,21 @@ h2 {font-size: 25px; margin: 0;
     > div {padding: 50px 0; }
 }
 
-.pg-404 { position: absolute; left: 0; top: 20%; bottom:0; width: 100%;
-    .pg-404__dialog {padding: 30px; position: relative; font-size: 20px; color: black; background: linear-gradient(to bottom, $amarelo 0%, $amarelo 50%, mix(black, $amarelo, 10%) 100%); margin-top: 10%; margin-bottom: 50px; box-shadow: 0 0 10px rgba(black,.3); border-radius: 20px;}
-    .pg-404__professor {@include bg("professor-404.png", no-repeat center top); display: none; background-size:100% auto;}
+.pg404 { position: absolute; left: 0; top: 20%; bottom:0; width: 100%;
+    &--dialog {padding: 30px; position: relative; font-size: 20px; color: black; background: linear-gradient(to bottom, $amarelo 0%, $amarelo 50%, mix(black, $amarelo, 10%) 100%); margin-top: 10%; margin-bottom: 50px; box-shadow: 0 0 10px rgba(black,.3); border-radius: 20px;}
+    &--professor {@include bg("professor-404.png", no-repeat center top); display: none; background-size:100% auto;}
     @include breakpoint(sm) {
-        .pg-404__dialog  {border-radius: 20px 0 20px 20px;
+        &--dialog  {border-radius: 20px 0 20px 20px;
             &:before {content:''; width: 0; position: absolute; left: 100%; top: 0; height: 0; border-style: solid; border-width: 30px 30px 0 0; border-color: $amarelo transparent transparent transparent;}
         }
-        .pg-404__professor {display: block;}
+        &--professor {display: block;}
     }
 }
 
 //.information-box {margin-bottom: 40px;}
 
-.type-list {list-style: none; padding: 0; margin: 0;
-    .type-list__item {display: block; line-height: 1.3; margin: 3px 0;}
+.typeList {list-style: none; padding: 0; margin: 0;
+    &--item {display: block; line-height: 1.3; margin: 3px 0;}
 }
 
 .list-inline .list-inline-item {border-radius: 10px; padding: 3px 10px; margin: 5px 5px 5px 0; line-height: 1.2; font-size: .9em; background: linear-gradient(to bottom, mix(white, $azul2, 30%) 0%, $azul2 100%); color: white; border: 1px solid white;
