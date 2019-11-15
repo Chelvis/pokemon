@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 })
 
 export class AppComponent {
-  defaultPageTitle = 'Pokémon Database';
+  defaultPageTitle = 'Pokedex';
 
   comboReady = true;
   pokemonReady = true;

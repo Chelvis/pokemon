@@ -1,4 +1,4 @@
-# Pokémon Database!
+# Pokémon Database (Pokedex)!
 
 Esta aplicação se trata de um teste de aptidão e domínio do Angular 5 e suas dependências. Consiste em um simples sistema de busca de pokémons que lista os detalhes de um pokémon através de uma combo de opções.
 
@@ -48,12 +48,16 @@ Pesquisei por alguns materiais online e impresso sobre Pokémon e percebi que qu
 
 ---
 
-## Links
+## Fork on GitHub
 
-[Github](https://github.com/Chelvis/pokemon)
+https://github.com/Chelvis/pokemon
 
-[Production](http://kelvinmarques.com.br/pokemon/)
+## Live Demo
 
-[404](http://kelvinmarques.com.br/pokemon/543252532)
+https://chelvis.github.io/pokemon/
+
+### 404 Example:
+
+https://chelvis.github.io/pokemon/31242342
 
 Obrigado!
